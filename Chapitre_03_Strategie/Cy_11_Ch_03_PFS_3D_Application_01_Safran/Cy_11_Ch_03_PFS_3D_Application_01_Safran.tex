@@ -1,0 +1,86 @@
+%\setchapterimage{fig_00.jpg}
+\chapter*{Application \arabic{cptApplication} \\ 
+Pilote automatique de voilier -- \ifprof Corrigé \else Sujet \fi}
+\addcontentsline{toc}{section}{Application \arabic{cptApplication} : Pilote automatique de voilier -- \ifprof Corrigé \else Sujet \fi}
+
+\iflivret \stepcounter{cptApplication} \else
+\ifprof  \stepcounter{cptApplication} \else \fi
+\fi
+
+\setcounter{question}{0}
+\marginnote{D'après Florestan \textsc{Mathurin}.}
+\marginnote[1cm]{
+\UPSTIcompetence[2]{B2-14}
+\UPSTIcompetence[2]{C1-05}
+\UPSTIcompetence[2]{C2-07}
+}
+
+\begin{marginfigure}[4cm]
+\includegraphics[width=\linewidth]{safran}
+
+\caption{Safrans... du SAFRAN (Skipper Marc Guillemot)}
+\end{marginfigure}
+
+\begin{marginfigure}[9cm]
+\includegraphics[width=\linewidth]{safran2}
+
+\caption{Schéma d'architecture}
+\end{marginfigure}
+
+
+
+
+Le safran d'un voilier lui permet de se diriger. Dans le cas du pilote hydraulique du laboratoire, l'angle du safran est asservi afin de pouvoir maintenir un cap, en tenant compte des aléas extérieurs (courants marins, vents violents...). Le safran est actionné par un vérin hydraulique, la pièce 2 étant relié à la tige du vérin et la pièce 3 constituant le corps du vérin. La pièce 1 représente le safran sur lequel agit la pression de l'eau $p$, perpendiculairement au plan du safran. 
+
+L'objectif de l'étude est de calculer les efforts dans les liaisons dans le but ultérieur de dimensionner le vérin hydraulique et les éléments mécaniques assurant les liaisons (éléments roulants ou coussinets). 
+
+
+
+%\begin{minipage}[c]{.6\linewidth}
+
+
+On donne : 
+\begin{itemize}
+\item $\vect{A_1B}=h\vect{y}$
+\item $\vect{CB}=\lambda\vect{x}$
+\end{itemize}
+
+\question{Tracer le graphe de structure associé au système.}
+
+NB : il serait possible d'écrire la loi Entrée -- Sortie liant la vitesse de déploiement du vérin à la vitesse de rotation du safran.
+
+\question{Sur le graphe d'architecture du système indiquer par des flèches les actions mécaniques agissant sur chacune des pièces.}
+
+Par la suite, on négligera l'action de la pesanteur sur les pièces 2 et 3. 
+
+%\end{minipage} \hfill
+%\begin{minipage}[c]{.35\linewidth}
+\begin{marginfigure}[4cm]
+\begin{center}
+{\includegraphics[width=.5\linewidth]{safran3}}
+\end{center}
+\end{marginfigure}
+%\end{minipage}
+
+%\vspace{.5cm}
+
+\question{Déterminer le torseur d'action mécanique de l'eau sur le gouvernail au point $A_2$. On considérera que $\vect{OA_2}=\vect{0}$. On négligera l'épaisseur du safran.} 
+
+%\subparagraph{}
+%\textit{Après avoir isolé le solide 1, appliquer le principe fondamental de la statique au point $A_1$.}
+%
+%\subparagraph{}
+%\textit{Quelles inconnues peuvent être déterminées ? Aurait-on pu le prévoir ?}
+%
+%\subparagraph{}
+%\textit{Après avoir isolé l'ensemble $\{2+3\}$, appliquer le principe fondamental de la statique au point $B$.}
+%
+%
+%\subparagraph{}
+%\textit{Quelles inconnues ont pu être déterminées ?}
+
+
+\question{Déterminer l'effort à délivrer par le vérin pour supporter la pression de l'eau sur le safran.}
+
+\question{Déterminer alors la pression à délivrer par le vérin en fonction d'une section $S$.}
+
