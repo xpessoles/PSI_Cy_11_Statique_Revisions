@@ -22,6 +22,8 @@ Stabilisateur vertical pour appareil photo \ifnormal $\star$ \else \fi \ifdiffic
 \includegraphics[width=\linewidth]{fig_01}
 \end{marginfigure}
 
+\ifprof
+\else
 L’utilisation du mode vidéo, en haute définition sur les appareils photo réflex et légers, pose aux photographes le problème de la stabilisation de l’image. 
  
 Les nacelles gyrostabilisées, installées sur une perche portée par les
@@ -29,17 +31,27 @@ Les nacelles gyrostabilisées, installées sur une perche portée par les
 
 Pour résoudre ce problème, un constructeur commercialise un stabilisateur vertical à installer entre la perche et la nacelle gyrostabilisée.
 
+\fi
+
 \section*{Vérification du respect de l'exigence relative à la position d'équilibre }
+
+
+\ifprof
+\else
 Le cahier des charges précise que le stabilisateur peut être utilisé avec des appareils photo de masse comprise entre \SI{0,350}{kg} et \SI{1,550}{kg}\sidenote{Exigence 1}.
 \begin{marginfigure}
 \centering
 \includegraphics[width=.8\linewidth]{fig_03}
 \caption{Exigence 1.1}
 \end{marginfigure}
+\fi
 
 \begin{obj}
  L'objectif de cette partie est de vérifier que la conception est assez robuste vis-à-vis du facteur de masse de l'appareil photo pour satisfaire l'exigence 1.1 relative à la position d'équilibre du système.
 \end{obj}
+
+\ifprof
+\else
 
 \begin{figure}[!h]
 \centering
@@ -86,6 +98,8 @@ Pour cette étude la nacelle gyrostabilisée (3) et l'appareil photo (4) sont co
 %\end{itemize}
 % La référence retenue pour décrire la position de l'appareil photo est le centre d'inertie $\mathrm{G}$ de l'ensemble constitué de la nacelle gyrostabilisée (3) et de l'appareil photo (4) dans le repère $\mathcal{R}_{0}$.
  
+ 
+ 
  \marginnote{
 Dans cette partie, l'étude est conduite avec les hypothèses suivantes :
 \begin{itemize}
@@ -102,6 +116,8 @@ Dans cette partie, l'étude est conduite avec les hypothèses suivantes :
 
 En utilisant une fermeture géométrique, on peut montrer que $\tan\beta = \dfrac{L\sin\alpha-l}{L\cos\alpha}$ et que la longueur du ressort $L_r$ peut s'exprimer sous la forme
 $L_r = \sqrt{L^2+l^2-2Ll\sin\alpha}$. 
+
+\fi
 
 %%Q 3. 
 %\question{\label{q:03} Exprimer les coordonnées du centre d'inertie $\mathrm{G}$ dans le repère $\mathcal{R}_{0}$ en fonction de l'angle $\alpha$ et des paramètres géométriques du système.}
@@ -307,6 +323,21 @@ Dès lors, il est posible de tracer l'angle d'équilibre $\alpha_{0}$ en fonctio
 %\label{Cy_11_Ch_03_PFS_2D_TD_05_fig_05}
 %\end{marginfigure}
 
+
+\ifprof
+\else
+\marginnote{
+\begin{solution}
+\begin{enumerate}
+\item $F_r=-F_{r0} - K_r$ $\left(\sqrt{L^2+l^2-2Ll\sin\alpha}-L_{r0}\right)$.
+\item ${\vect{F}_{23}=F_{23}\vect{y_2}}$ et ${\vect{F}_{2'3}=F_{2'3}\vect{y_2}}$.
+\item .
+\item $ZF_r = -m_{34} g \dfrac{\cos\alpha}{\sin\left(\alpha-\beta \right)}$.
+\item $-9\degres$ à $18\degres$.  
+\end{enumerate}
+\end{solution}}
+\fi
+
 %Q 11. 
 \question{\label{q:11} En donnant les valeurs des angles d'équilibre pour les deux valeurs extrêmes de masse, vérifier le respect de l'exigence 1.1.1. relative à la plage de fonctionnement.}
 \ifprof
@@ -320,9 +351,14 @@ On peut lire en figure \ref{Cy_11_Ch_03_PFS_2D_TD_05_fig_05} que pour une masse 
 \else
 \fi
 
+\ifprof
+\else
 
 \begin{figure}[!h]
 \includegraphics[width=6.5cm]{fig_05}
 \caption{Angle d’équilibre $\alpha_0$ en fonction de la masse de l’appareil photo $m_4$}
 \label{Cy_11_Ch_03_PFS_2D_TD_05_fig_05}
 \end{figure}
+
+\fi
+
