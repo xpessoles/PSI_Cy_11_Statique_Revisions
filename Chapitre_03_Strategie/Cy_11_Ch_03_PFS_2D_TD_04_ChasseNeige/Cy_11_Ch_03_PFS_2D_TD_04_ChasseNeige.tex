@@ -26,18 +26,7 @@ Chasse neige \ifnormal $\star$ \else \fi \ifdifficile $\star\star$ \else \fi \if
 \subsection*{Mise en situation}
 \ifprof
 \else
-L’étrave de déneigement, objet de cette
-étude, est utilisée pour dégager les routes.
-Elle est composée de deux volets disposés
-en « V » qui permettent d’évacuer sur les
-côtés une épaisseur importante de neige.
-Les deux volets sont articulés de façon
-indépendante sur la pointe de l’étrave et
-ont une ouverture variable contrôlée par
-le conducteur à travers un vérin
-d’ouverture. En fin d’utilisation ou pour
-éviter des obstacles, elle est pourvue d’un
-système de relevage hydraulique.
+L’étrave de déneigement, objet de cette étude, est utilisée pour dégager les routes. Elle est composée de deux volets disposés en « V » qui permettent d’évacuer sur les côtés une épaisseur importante de neige. Les deux volets sont articulés de façon indépendante sur la pointe de l’étrave et ont une ouverture variable contrôlée par le conducteur à travers un vérin d’ouverture. En fin d’utilisation ou pour éviter des obstacles, elle est pourvue d’un système de relevage hydraulique.
 
 \includegraphics[width=\linewidth]{fig_01}
 
@@ -66,11 +55,10 @@ $\torseurstat{T}{\text{neige}}{7} =  \torseurl{Q\vx{7}}{\vect{0}}{Q}$ avec $Q = 
 \item le vérin d’ouverture choisi supporte une pression d'alimentation de 150 bars.
 \end{itemize}
 
-
+\fi
 \subsection*{Problème ouvert}
 
-\question{Proposer et mettre en \oe{}uvre une démarche permettant de vérifier si la pression d'alimentation du vérin d’ouverture est 
-suffisante pour « chasser la neige ». }
+\question{Proposer et mettre en \oe{}uvre une démarche permettant de déterminer la section du vérin permettant de « chasser la neige ». }
 
 \subsection*{Problème décomposé}
 
@@ -83,18 +71,31 @@ suffisante pour « chasser la neige ». }
 
 \question{En isolant 7, exprimer la relation liant $F$, $Q$ et les grandeurs géométriques.}
 
-\question{En déduire la pression dans le vérin en fonction de sa section $S$, $Q$ et des grandeurs géométriques.}
+\question{En déduire la séction minimale $S$, du vérin permettant de chasser la neige.}
 
 \ifprof
+\else
+\begin{marginfigure}
+\begin{solution}
+$S= - \dfrac{Q\left( a\sin \gamma+c\cos\gamma \right)  }{p h \sin\left(\beta - \gamma\right)}$.
+\end{solution}
+\end{marginfigure}
+\fi
+
+
+\ifprof
+\begin{corrige}
+\paragraph*{Graphe de liaisons}
+
 On commence par faire les figures planes puis le graphe de liaisons.
 \begin{enumerate}
 \item On cherche les solides ou les ensembles de solides soumis à 2 glisseurs . Le problème étant plan, les pivots dont l'axe est perpendiculaire au plan sont des glisseurs. \{10+11\} est un ensemble soumis à 2 glisseurs.
 \item On isole ensuite 7 et on rélise un théorème du moment statique en $H$ suivant $\vy{3}$.
 \end{enumerate}
 
-\begin{figure*}[!h]
+\begin{center}
 \includegraphics[width=\linewidth]{cor_01}
-\end{figure*}
+\end{center}
 
 \paragraph*{On isole le vérin \{10+11\}}
 D'après le PFS, l'ensmble étant soumis à 2 glisseurs, on a donc $\torseurstat{T}{11}{7} = \torseurl{F\vz{11}}{\vect{0}}{J}$.
@@ -108,7 +109,7 @@ BAME :
 \item action de la pièce 3;
 \end{itemize}
 
-On réalise le TMS en $H$ en projection sur $\vy{3}$.
+\paragraph*{On réalise le TMS en $H$ en projection sur $\vy{3}$.}
 
 $$
 \vectm{H}{\text{neige}}{7} \cdot \vy{3} + \vectm{H}{\text{Pesanteur}}{7} \cdot \vy{3} + \vectm{H}{11}{7} \cdot \vy{3} + \underbrace{\vectm{H}{3}{7} \cdot \vy{3}}_{\vect{0}} =0
@@ -147,6 +148,8 @@ $
 Au final, $F= - \dfrac{Q\left( a\sin \gamma+c\cos\gamma \right)  }{ h \sin\left(\beta - \gamma\right)}$.
 
 $F$ étant l'effort déployé par le vérin, et $S$ sa section, on a alors, $F=pS$ et 
-$p= - \dfrac{Q\left( a\sin \gamma+c\cos\gamma \right)  }{S h \sin\left(\beta - \gamma\right)}$
+$S= - \dfrac{Q\left( a\sin \gamma+c\cos\gamma \right)  }{p h \sin\left(\beta - \gamma\right)}$.
+
+\end{corrige}
 \else
 \fi
