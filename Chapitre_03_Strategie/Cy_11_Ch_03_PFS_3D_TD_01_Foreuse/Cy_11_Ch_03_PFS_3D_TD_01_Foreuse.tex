@@ -15,6 +15,9 @@ Machine de forage -- \ifprof Corrigé \else Sujet \fi}
 \UPSTIcompetence[2]{C2-07}
 }
 
+
+\ifprof
+\else
 \begin{marginfigure}
 \includegraphics[width=\linewidth]{fig_01}
 \end{marginfigure}
@@ -50,7 +53,7 @@ Le paramétrage mécanique est donné sur la figure \ref{Cy_11_Ch_03_PFS_3D_TD_0
 \begin{itemize}
 \item \textbf{0} le sol, \textbf{S1} le châssis de la foreuse, \textbf{S2} sa tourelle et son mât et \textbf{S3} l’ensemble \{table de forage + outil\} ; 
 \item $\rep{0} = \repere{O}{x}{y}{z}$ le repère attaché aux solides \textbf{S0} et \textbf{S1}; 
-\item $\mathcal{B}_2=\base{x_2}{y_2}{z_2}$ la base attachée aux solides \textbf{Sé} et \textbf{S3} telle que $\angl{x}{x_2}=\theta$ où $\theta$ est connu ;
+\item $\mathcal{B}_2=\base{x_2}{y_2}{z_2}$ la base attachée aux solides \textbf{S2} et \textbf{S3} telle que $\angl{x}{x_2}=\theta$ où $\theta$ est connu ;
 \item $\Sigma = $ \textbf{\{S1, S2, S3\}} l’ensemble de la foreuse, de centre de gravité $G$ tel que $\vect{OG} = r \vx{2} +  z_G \vect{z}$;
 \item $M = \SI{186,5}{tonnes}$ la masse de l’ensemble $\Sigma$ et $m =\SI{18}{tonnes}$ la masse de \textbf{S3} seul ; 
 \item $2F_w \vect{z}$ connu, l’effort du câble d’avance sur \textbf{S3}. La masse du câble est négligée dans la suite ; 
@@ -58,8 +61,9 @@ Le paramétrage mécanique est donné sur la figure \ref{Cy_11_Ch_03_PFS_3D_TD_0
 \item $-g\vect{z}$  où $g = \SI{9,8}{m.s^{-2}}$, l’accélération de la pesanteur terrestre.
 \end{itemize}
 
-On modélise ici les contacts entre le sol et la foreuse\textbf{par des contacts ponctuels}  :
+On modélise ici les contacts entre le sol et la foreuse \textbf{par des contacts ponctuels}  :
 $F_g \vect{z}$, (respectivement  $F_d \vect{z}$) inconnu, l’effort du sol 0 sur S1, supposé ponctuel au centre $I$ (respectivement  $J$) de la surface de contact entre la chenille gauche $cg$ (respectivement  $c_d$) et le sol tel que $||\vect{OI}|| = a=\SI{2,1}{m}$ (respectivement  $||\vect{OJ}|| = a=\SI{2,1}{m}$).
+\fi
 
 
 \question{En appliquant le principe fondamental de la statique en $O$ à l’isolement de votre choix, donner l’expression de $\indice{F}{g}$ et de $\indice{F}{d}$ en fonction des données connues du système, de $\theta$ et de $\indice{F}{sol}$. }
@@ -69,20 +73,60 @@ $F_g \vect{z}$, (respectivement  $F_d \vect{z}$) inconnu, l’effort du sol 0 su
 
 \paragraph*{BAME}
 \begin{itemize}
-\item action du sol en $I$;
-\item action du sol en $J$;
-\item pesanteur en $G$;
-\item l'effort du sol sur l'outil. 
+\item action du sol en $I$ : $\torseurstat{T}{0}{\Sigma} = \torseurl{F_g \vect{z}}{\vect{0}}{I}$; de plus, 
+$\vectm{O}{0}{\Sigma} = \vectm{I}{0}{\Sigma} + \vect{OI}\wedge F_g \vect{z}$ $=-a\vect{x}\wedge F_g \vect{z}$ $=aF_g \vect{y}$.
+\item action du sol en $J$ : $\torseurstat{T}{0}{\Sigma} = \torseurl{F_d \vect{z}}{\vect{0}}{J}$;
+de plus, $\vectm{O}{0}{\Sigma} = \vectm{J}{0}{\Sigma} + \vect{OJ}\wedge F_d \vect{z}$ $=a\vect{x}\wedge F_d \vect{z}$ $=-aF_d \vect{y}$.
+
+\item pesanteur en $G$ : $\torseurstat{T}{\text{pes}}{\Sigma} = \torseurl{-Mg \vect{z}}{\vect{0}}{G}$;
+de plus, $\vectm{O}{\text{pes}}{\Sigma} = \vectm{G}{0}{\Sigma} + \vect{OG}\wedge -Mg \vect{z}$ $=\left(r \vx{2} +  z_G \vect{z}\right) \wedge -Mg  \vect{z}$ $=r \vx{2} +   \wedge -Mg  \vect{z}$
+$=Mg  r \vy{2} $.
+
+\item l'effort du sol sur l'outil : $\torseurstat{T}{\text{sol}}{\Sigma} = \torseurl{\indice{F}{sol} \vect{z}}{\vect{0}}{F}$;
+de plus, $\vectm{O}{\text{sol}}{\Sigma} =  \vect{OF}\wedge \indice{F}{sol} \vect{z}$ $=R\vect{x_2}\wedge \indice{F}{sol} \vect{z} $ $=-R\indice{F}{sol} \vect{y_2}$.
 \end{itemize}
+
+On a donc : 
+\begin{itemize}
+\item TRS en projection sur $\vect{z}$ : $F_g+F_d-Mg + \indice{F}{sol} = 0$.
+\item TMS en $O$ en projection sur $\vect{x}$ : $ -Mgr \sin \theta +R\indice{F}{sol} \sin \theta= 0$.
+\item TMS en $O$ en projection sur $\vect{y}$ : $  aF_g - aF_d+Mgr \cos \theta-R\indice{F}{sol} \cos \theta= 0$.
+\end{itemize}
+
+La dernière équation est donc :$  F_g - F_d+\dfrac{Mgr}{a} \cos \theta-\dfrac{R}{a}\indice{F}{sol} \cos \theta= 0$.
+
+En conséquence, 
+$2F_g-Mg + \indice{F}{sol}+\left(Mgr -R\indice{F}{sol}\right) \dfrac{\cos \theta}{a}= 0$ et
+
+$2F_d-Mg + \indice{F}{sol} -\left(Mgr -R\indice{F}{sol}\right) \dfrac{ \cos \theta}{a}= 0$.
+
+Au final, 
+$\left\{
+\begin{array}{l}
+2F_g =  Mg - \indice{F}{sol}-\left(Mgr -R\indice{F}{sol}\right) \dfrac{\cos \theta}{a} \\
+2F_d = Mg - \indice{F}{sol} +\left(Mgr -R\indice{F}{sol}\right) \dfrac{ \cos \theta}{a}
+\end{array}
+\right.$.
 
 \end{corrige}
 \else
 \fi
-Le problème étant symétrique pour $\theta \in \left[-\dfrac{\pi}{2};\dfrac{\pi}{2}\right]$(tourelle orientée à droite) et $\theta \in \left[\dfrac{\pi}{2};\dfrac{3\pi}{2}\right]$ (tourelle orientée à gauche), on n’étudie par la suite que le basculement statique à droite. 
 
-\question{ Donner la condition en effort pour laquelle il y a basculement statique à droite. En absence d’effort de forage, en déduire la condition sur la position $\left(r,\theta\right)$ du centre de gravité $G$ pour laquelle le basculement à droite est alors évité.}
+\ifprof
+\else
+Le problème étant symétrique pour $\theta \in \left[-\dfrac{\pi}{2};\dfrac{\pi}{2}\right]$(tourelle orientée à droite) et $\theta \in \left[\dfrac{\pi}{2};\dfrac{3\pi}{2}\right]$ (tourelle orientée à gauche), on n’étudie par la suite que le basculement statique à droite. 
+\fi
+
+\question{Donner la condition en effort pour laquelle il y a basculement statique à droite. En absence d’effort de forage, en déduire la condition sur la position $\left(r,\theta\right)$ du centre de gravité $G$ pour laquelle le basculement à droite est alors évité.}
 \ifprof
 \begin{corrige}
+Il y a basculement lorsque $F_g \leq 0 $ et en l'absence de forage, $\indice{F}{sol}=0$. donc 
+$Mg -\left(Mgr \right) \dfrac{\cos \theta}{a} \leq 0$
+$\Rightarrow Mg \left(1 -r\dfrac{\cos \theta}{a} \right)  \leq 0$
+$\Rightarrow a -r\cos \theta \leq 0$
+$\Rightarrow a \leq r\cos \theta$.
+
+
 \end{corrige}
 \else
 \fi
@@ -90,6 +134,7 @@ Le problème étant symétrique pour $\theta \in \left[-\dfrac{\pi}{2};\dfrac{\p
 \question{Interpréter physiquement ce résultat et montrer que $b_{\%}$ peut être, dans ce cas, approximé par : $b_{\%} = 100\dfrac{\left| r\cos \theta \right|}{a}$.}
 \ifprof
 \begin{corrige}
+Pour ne pas basculer, le centre de gravité doit être à l'intérieur des chenilles.
 \end{corrige}
 \else
 \fi
@@ -101,6 +146,8 @@ Le problème étant symétrique pour $\theta \in \left[-\dfrac{\pi}{2};\dfrac{\p
 de gravité des différents solides. \label{Cy_11_Ch_03_PFS_3D_TD_01_fig_05}}
 \end{marginfigure}
 
+\ifprof
+\else
 On désire dimensionner le nombre de contrepoids de 8 tonnes à 
 placer à l’arrière de la tourelle pour que, en l’absence de forage 
 et en extension maximale, l’exigence 1.2 d’équilibrage statique 
@@ -124,9 +171,23 @@ est la masse d’un seul contrepoids;
 \end{itemize} 
 On note (en mètres) : $\vect{OG_t}=2,2\vect{z}$, $\vect{OG_e}=4,4\vect{x}+13\vect{z}$; $\vect{OG_c}=-4,3\vect{x}+2,3\vect{z}$. On fait l'hypothèse que $\vect{OG_c}$ reste identique, indépendamment du nombre de contrepoids. 
 
+\fi
+
 \question{Exprimer la coordonnée sur $\vect{x}$, notée $r$, du centre de gravité $G$ total de la machine en fonction des paramètres connus et de $n_{cp}$. En déduire le nombre $n_{cp}$ minimum de contrepoids pour respecter l’exigence 1.2. }
 \ifprof
 \begin{corrige}
+On a, par définition du barycentre, 
+$\left( m_t + m_e +m_c \right) \vect{OG} = m_t \vect{OG_t} + m_e \vect{OG_e} + m_c \vect{OG_c} $.
+En projectant sur $\vect{x}$, on a :  
+$ \vect{OG}\cdot \vect{x} =   \dfrac{4,4 m_e  -4,3 m_c}{m_t + m_e +m_c }  $
+$ \Rightarrow r =   \dfrac{4,4 m_e  -4,3 n_{cp}m_1}{m_t + m_e +n_{cp}m_1 }  $
+$ \Rightarrow r m_t + rm_e +rn_{cp}m_1=   4,4 m_e  -4,3 n_{cp}m_1 $
+$ \Rightarrow n_{cp}\left(r m_1 + 4,3 m_1\right) =   4,4 m_e  - r m_t - rm_e $
+$ \Rightarrow n_{cp} =  \dfrac{ 4,4 m_e  - r m_t - rm_e}{r m_1 + 4,3 m_1} $.
+
+Pour ne pas basculer, on doit avoir $r<a$. En prenant en compte l'exigence 1.2, il faut que $r<0,5a$.
+
+On peut en déduire $n_{cp}$.
 \end{corrige}
 \else
 \fi
