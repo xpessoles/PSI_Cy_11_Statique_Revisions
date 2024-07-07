@@ -1,11 +1,11 @@
 % "{'classe':('PSI'),'chapitre':'stat_mam','type':('td'),'titre':'Machine de forage', 'source':'Concours CCINP 2023 - MP','comp':('B2-14','C1-05','C2-07'),'corrige':False}"
 %\setchapterimage{fig_00.jpg}
-\chapter*{TD \arabic{cptApplication} \\ 
+\chapter*{TD \arabic{cptTD} \\ 
 Machine de forage -- \ifprof Corrigé \else Sujet \fi}
-\addcontentsline{toc}{section}{TD \arabic{cptApplication} : Machine de forage -- \ifprof Corrigé \else Sujet \fi}
+\addcontentsline{toc}{section}{TD \arabic{cptTD} : Machine de forage -- \ifprof Corrigé \else Sujet \fi}
 
-\iflivret \stepcounter{cptApplication} \else
-\ifprof  \stepcounter{cptApplication} \else \fi
+\iflivret \stepcounter{cptTD} \else
+\ifprof  \stepcounter{cptTD} \else \fi
 \fi
 
 \setcounter{question}{0}
@@ -41,20 +41,11 @@ D’après les normes européennes,
 % les  efforts entre le sol et les chenilles ne doivent pas être modélisés comme 
 %ponctuels au centre de leur surface de  contact comme cela a été supposé 
 %dans la partie précédente (avec $F_d$ et $F_g$). La 
-la répartition de pression du sol sur 
-chaque chenille doit être modélisée 
-comme trapézoïdale sur sa longueur et 
-constante sur sa largeur. Un exemple 
-de représentations 3D, 2D et << aplatie >> 
+la répartition de pression du sol sur chaque chenille doit être modélisée comme trapézoïdale sur sa longueur et constante sur sa largeur. Un exemple de représentations 3D, 2D et << aplatie >> 
 %(comme vue sur l’écran de contrôle dans la cabine) 
-de telles répartitions est 
-donné sur la figure \ref{Cy_11_Ch_01_TD_01_fig_06}. Sur la vue 
-<< aplatie >>, la machine est vue de 
-dessus et la visualisation de l’allure des 
-pressions sous les chenilles est 
-ramenée dans le plan.% de l’écran. 
+de telles répartitions est donné sur la figure \ref{Cy_11_Ch_01_TD_01_fig_06}. Sur la vue << aplatie >>, la machine est vue de dessus et la visualisation de l’allure des pressions sous les chenilles est ramenée dans le plan.% de l’écran. 
 
- \begin{table*}
+\begin{table*}
 \footnotesize{
 \begin{tabular}{p{3cm}ccccccc}
 \hline
@@ -68,25 +59,11 @@ admissible (kPa)} & 2 000 & 800 & 400&  200&  200&  100 & $<100$ \\ \hline
 \end{table*}
 
 
-Un des rôles de l’ordinateur de bord est 
-d’estimer ces répartitions de pression 
-afin de vérifier que la pression 
-maximale supportée par le sol (rentrée 
-par l’utilisateur en fonction du site) n’est 
-pas atteinte à un coefficient de sécurité 
-près. 
-Si c’est le cas, l’ordinateur bloque tous 
-les mouvements de la foreuse qui 
-risqueraient d’empirer et renvoie une 
-alarme. 
+Un des rôles de l’ordinateur de bord est d’estimer ces répartitions de pression afin de vérifier que la pression maximale supportée par le sol (rentrée par l’utilisateur en fonction du site) n’est pas atteinte à un coefficient de sécurité près. Si c’est le cas, l’ordinateur bloque tous les mouvements de la foreuse qui risqueraient d’empirer et renvoie une alarme. 
 
-
+On se propose dans cette sous-partie d’étudier cette estimation. 
  
-On se propose dans cette sous-partie 
-d’étudier cette estimation. 
- 
- On base l’étude sur le paramétrage figure \ref{Cy_11_Ch_01_TD_01_fig_07}, avec répartition de 
-pression entre le sol et les chenilles. On note : 
+On base l’étude sur le paramétrage figure \ref{Cy_11_Ch_01_TD_01_fig_07}, avec répartition de pression entre le sol et les chenilles. On note : 
 \begin{itemize}
 \item $P(x,y,0)$, un point courant de contact entre le sol et les chenilles. Attention, $x$ est négatif sur la 
 figure ci-dessous. Les grandeurs $\dd x$ et $\dd y$ sont les dimensions du domaine surfacique élémentaire autour du point $P$ entre le sol et les chenilles ; 
@@ -134,11 +111,8 @@ fonction de $A$ et de $B$. }
  
 \question{Déterminer à l’aide de la question précédente les expressions de l’effort $\vect{F_{0\rightarrow cg}}$ et du moment au point $O$ $\vect{M_{O,0\rightarrow cg}}$ en fonction de $B$, $D$ et des données connues du système.}
  
- De même, on pourrait, par analogie, déterminer $\vect{F_{0\rightarrow cd}}$ $\vect{M_{O,0\rightarrow cd}}$ en fonction de $C$ et de $D$. Au final, 
-on peut en déduire la force $\vect{F_{0\rightarrow \Sigma}}$
- qu’exerce le sol sur la foreuse et le moment en $O$ qu’exerce le sol 
-sur la foreuse $\vect{M_{O,0\rightarrow \Sigma}}$
- (via uniquement les chenilles gauche et droite).
+ De même, on pourrait, par analogie, déterminer $\vect{F_{0\rightarrow cd}}$ $\vect{M_{O,0\rightarrow cd}}$ en fonction de $C$ et de $D$. Au final, on peut en déduire la force $\vect{F_{0\rightarrow \Sigma}}$
+ qu’exerce le sol sur la foreuse et le moment en $O$ qu’exerce le sol sur la foreuse $\vect{M_{O,0\rightarrow \Sigma}}$ (via uniquement les chenilles gauche et droite).
  
  
 \marginnote{$
@@ -172,11 +146,16 @@ du sol sur la chenille gauche vaut toujours
 $B+\left|\dfrac{A}{2}\right|$ (respectivement  $D+\left|\dfrac{C}{2}\right|$ à droite).
 
 Ainsi, pour estimer la pression maximale exercée au sol, l’ordinateur de bord estime d’abord la 
-position de $E$ et la valeur de $\indice{F}{eq}$ en fonction des données renvoyées à tout instant par les capteurs 
-présents sur les différents axes de la foreuse. Ensuite, il détermine les valeurs des pressions $A$, $B$, 
-$C$ et $D$ grâce aux équations précédentes avec \textbf{l’hypothèse assez réaliste où $C = A$} et en déduit la 
-pression maximale. Enfin, il renvoie à l’écran la visualisation << aplatie >> des distributions de pression 
-et sonne l’alarme en cas d’approche de la pression maximale autorisée rentrée par l’utilisateur. 
+position de $E$ et la valeur de $\indice{F}{eq}$ en fonction des données renvoyées à tout instant par les capteurs présents sur les différents axes de la foreuse. Ensuite, il détermine les valeurs des pressions $A$, $B$, $C$ et $D$ grâce aux équations précédentes avec \textbf{l’hypothèse assez réaliste où $C = A$} et en déduit la pression maximale. Enfin, il renvoie à l’écran la visualisation << aplatie >> des distributions de pression et sonne l’alarme en cas d’approche de la pression maximale autorisée rentrée par l’utilisateur. 
+
+\ifprof
+\else
+\begin{marginfigure}
+\centering
+\includegraphics[width=3cm]{Cy_11_Ch_01_TD_01_Foreuse_qr}
+\end{marginfigure}
+\fi
+
 
 \question{Après avoir précisé l’expression des paramètres $A$, $B$, $C$ et $D$, donner l’expression de la pression maximale de chacune des répartitions estimées (gauche et droite) en fonction des données connues par la machine ($L$, $l$, $a$, $e$, $\theta$ et $\indice{F}{eq}$ uniquement). }
 
