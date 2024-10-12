@@ -10,19 +10,19 @@ Pilote automatique de voilier -- \ifprof Corrigé \else Sujet \fi}
 
 \setcounter{question}{0}
 \marginnote{D'après Florestan \textsc{Mathurin}.}
-\marginnote[1cm]{
-\UPSTIcompetence[2]{B2-14}
-\UPSTIcompetence[2]{C1-05}
-\UPSTIcompetence[2]{C2-07}
-}
+%\marginnote[1cm]{
+%\UPSTIcompetence[2]{B2-14}
+%\UPSTIcompetence[2]{C1-05}
+%\UPSTIcompetence[2]{C2-07}
+%}
 
-\begin{marginfigure}[4cm]
+\begin{marginfigure}%[4cm]
 \includegraphics[width=\linewidth]{safran}
 
 \caption{Safrans... du SAFRAN (Skipper Marc Guillemot)}
 \end{marginfigure}
 
-\begin{marginfigure}[9cm]
+\begin{marginfigure}%[9cm]
 \includegraphics[width=\linewidth]{safran2}
 
 \caption{Schéma d'architecture}
@@ -47,8 +47,12 @@ On donne :
 \end{itemize}
 
 \question{Tracer le graphe de structure associé au système.}
+\ifcolle
+\question{Dnner le degré d'hyperstatisme associé au modèle proposé.}
+\else
+\fi
 
-NB : il serait possible d'écrire la loi Entrée -- Sortie liant la vitesse de déploiement du vérin à la vitesse de rotation du safran.
+%NB : il serait possible d'écrire la loi Entrée -- Sortie liant la vitesse de déploiement du vérin à la vitesse de rotation du safran.
 
 \question{Sur le graphe d'architecture du système indiquer par des flèches les actions mécaniques agissant sur chacune des pièces.}
 
@@ -56,7 +60,7 @@ Par la suite, on négligera l'action de la pesanteur sur les pièces 2 et 3.
 
 %\end{minipage} \hfill
 %\begin{minipage}[c]{.35\linewidth}
-\begin{marginfigure}[4cm]
+\begin{marginfigure}%[4cm]
 \begin{center}
 {\includegraphics[width=.5\linewidth]{safran3}}
 \end{center}
