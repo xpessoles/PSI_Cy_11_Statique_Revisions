@@ -5,26 +5,33 @@
 %
 %\chapter{Rappels sur la modélisation des actions mécaniques}
 
-\marginnote[3cm]{
-\UPSTIcompetence[2]{B2-14}
-%\UPSTIcompetence[2]{C2-03}
-}
+
+
+%
+%\marginnote[3cm]{
+%\UPSTIcompetence[2]{B2-14}
+%%\UPSTIcompetence[2]{C2-03}
+%}
 
 %\marginnote[5cm]{\textbf{Frédéric Mazet}, \textit{Cours d'automatique de deuxième année}, Lycée Dumont Durville, Toulon.}
 
 
-\newpage
+%\newpage
+
 
 \section{Modélisation du contact ponctuel entre 2 pièces}
 \subsection{Torseur des actions mécaniques}
+\marginnote{\xpComp{STAT}{02}}
+Considérons le contact ponctuel ponctuel entre deux pièces \textbf{1} et \textbf{2}. En considérant la liaison parfaite, le torseur des actions mécaniques de 1 sur 2 s'écrit sous la forme suivante : $\torseurstat{T}{1}{2}=\torseurl{F_{12} \vect{n_{12}}}{\vect{0}}{I}$ en notant $\vect{n_{12}}$ le vecteur normal au contact orienté de 1 vers 2. 
+En considérant que la liaison n'est pas parfaite, plusieurs situation peuvent se présenter.  
+
+
+
 \begin{marginfigure}%[3cm]
 \begin{center}
 \includegraphics[width=\linewidth]{fig_01}
 \end{center}
 \end{marginfigure}
-Considérons le contact ponctuel ponctuel entre deux pièces \textbf{1} et \textbf{2}. En considérant la liaison parfaite, le torseur des actions mécaniques de 1 sur 2 s'écrit sous la forme suivante : $\torseurstat{T}{1}{2}=\torseurl{F_{12} \vect{n_{12}}}{\vect{0}}{I}$ en notant $\vect{n_{12}}$ le vecteur normal au contact orienté de 1 vers 2. 
-En considérant que la liaison n'est pas parfaite, plusieurs situation peuvent se présenter.  
-
 
 \begin{itemize}
 \item Si on considère qu'un effort tend à faire translater 2 suivant $\vect{t_{12}}$, le torseur des actions mécaniques de 1 sur 2 peut alors s'écrire sous la forme $\torseurstat{T}{1}{2}=\torseurl{N_{12} \vect{n_{12}}+T_{12} \vect{t_{12}}}{\vect{0}}{I}$.
@@ -54,8 +61,9 @@ On constate expérimentalement qu'une fois la pièce est en mouvement, si on dim
 
 
 Ces facteurs sont sans unité. Ils dépendent de la nature des matériaux en contact ainsi que de la nature des surfaces de contact (et d'un lubrifiant éventuel). Ils sont indépendants de l'effort de 2 sur 1. Ces deux facteurs étant relativement proches, on fera l'hypothèse que $f=f_a=f_g$. 
-\newpage
-\clearpage
+
+%\newpage
+%\clearpage
 
 \subsection{Modélisation de l'adhérence et du glissement -- Lois de Coulomb}
 

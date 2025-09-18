@@ -183,6 +183,22 @@ $L_r = \sqrt{L^2+l^2-2Ll\sin\alpha}$.
 %\fi
 
 \subsection*{Vérification de l'exigence relative à la plage de fonctionnement}
+
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{fig_05}
+\caption{Angle d’équilibre $\alpha_0$ en fonction de la masse de l’appareil photo $m_4$}
+\label{Cy_11_Ch_03_PFS_2D_TD_05_fig_05}
+\end{marginfigure}
+
+\ifprof
+\else
+\begin{marginfigure}
+\centering
+\includegraphics[width=3cm]{Cy_11_Ch_03_PFS_2D_TD_05_StabilisateurVertical_qr}
+\end{marginfigure}
+\fi
+
+
 \ifprof
 \else
 L'action mécanique du ressort de traction (5) sur la nacelle gyrostabilisée (3) est modélisée par le torseur $\left\{\mathcal{F}_{5 \rightarrow 3}\right\}$ : 
@@ -193,6 +209,23 @@ F_{r} \vec{y}_{5} \\
 \end{array}\right\}_{\mathrm{B}} .
 $
 \fi
+
+
+
+\ifprof
+\else
+\ifcolle \else
+\marginnote{
+\begin{solution}
+\begin{enumerate}
+\item $F_r=-F_{r0} - K_r$ $\left(\sqrt{L^2+l^2-2Ll\sin\alpha}-L_{r0}\right)$.
+\item ${\vect{F}_{23}=F_{23}\vect{y_2}}$ et ${\vect{F}_{2'3}=F_{2'3}\vect{y_2}}$.
+\item .
+\item $ZF_r = -m_{34} g \dfrac{\cos\alpha}{\sin\left(\alpha-\beta \right)}$.
+\item $-9\degres$ à $18\degres$.  
+\end{enumerate}
+\end{solution}}
+\fi\fi
 
 %Q 6.
 \question{\label{q:06}Exprimer la composante de résultante d'action mécanique $F_{r}$ en fonction de l'angle $\alpha$, des paramètres géométriques du système et des paramètres du ressort.}
@@ -287,6 +320,8 @@ $\boxed{F_r = -m_{34} g \dfrac{\cos\alpha}{\sin\left(\alpha-\beta \right)}}$.
 \else
 \fi
 
+
+
 \ifprof
 \else
 %À partir des relations déterminées précédemment, deux fonctions \texttt{beta(alpha)} et \texttt{effort\_ressort(alpha)} qui renvoient respectivement la valeur de l'angle $\beta$ et la valeur de la composante de résultante d'action mécanique $F_{r}$ sont implantées en Python. La bibliothèque \texttt{numpy} a été importée sous le nom abrégé \texttt{np}. Les variables globales $\mathrm{g}$ et $\mathrm{m} 3$ fournissent respectivement la valeur de l'accélération de la pesanteur terrestre et la valeur de la masse de la nacelle gyrostabilisée (3). Les positions d'équilibre pour différentes valeurs de la masse $m_{4}$ sont alors obtenues par une méthode de recherche de zéro par dichotomie.
@@ -309,6 +344,8 @@ $\boxed{F_r = -m_{34} g \dfrac{\cos\alpha}{\sin\left(\alpha-\beta \right)}}$.
 %\else
 %\fi
 
+
+
 \ifprof
 \else
 Dès lors, il est posible de tracer l'angle d'équilibre $\alpha_{0}$ en fonction de la masse de l'appareil photo $m_{4}$ (figure~\ref{Cy_11_Ch_03_PFS_2D_TD_05_fig_05}).
@@ -325,30 +362,9 @@ Dès lors, il est posible de tracer l'angle d'équilibre $\alpha_{0}$ en fonctio
 %\end{marginfigure}
 
 
-\ifprof
-\else
-\begin{marginfigure}
-\centering
-\includegraphics[width=3cm]{Cy_11_Ch_03_PFS_2D_TD_05_StabilisateurVertical_qr}
-\end{marginfigure}
-\fi
 
 
 
-\ifprof
-\else
-\ifcolle \else
-\marginnote{
-\begin{solution}
-\begin{enumerate}
-\item $F_r=-F_{r0} - K_r$ $\left(\sqrt{L^2+l^2-2Ll\sin\alpha}-L_{r0}\right)$.
-\item ${\vect{F}_{23}=F_{23}\vect{y_2}}$ et ${\vect{F}_{2'3}=F_{2'3}\vect{y_2}}$.
-\item .
-\item $ZF_r = -m_{34} g \dfrac{\cos\alpha}{\sin\left(\alpha-\beta \right)}$.
-\item $-9\degres$ à $18\degres$.  
-\end{enumerate}
-\end{solution}}
-\fi\fi
 
 %Q 11. 
 \question{\label{q:11} En donnant les valeurs des angles d'équilibre pour les deux valeurs extrêmes de masse, vérifier le respect de l'exigence 1.1.1. relative à la plage de fonctionnement.}
@@ -366,11 +382,12 @@ On peut lire en figure \ref{Cy_11_Ch_03_PFS_2D_TD_05_fig_05} que pour une masse 
 \ifprof
 \else
 
-\begin{figure}[!h]
-\includegraphics[width=6.5cm]{fig_05}
-\caption{Angle d’équilibre $\alpha_0$ en fonction de la masse de l’appareil photo $m_4$}
-\label{Cy_11_Ch_03_PFS_2D_TD_05_fig_05}
-\end{figure}
-
+%
+%\begin{figure}[!h]
+%\includegraphics[width=6.5cm]{fig_05}
+%\caption{Angle d’équilibre $\alpha_0$ en fonction de la masse de l’appareil photo $m_4$}
+%\label{Cy_11_Ch_03_PFS_2D_TD_05_fig_05}
+%\end{figure}
+%
 \fi
 
