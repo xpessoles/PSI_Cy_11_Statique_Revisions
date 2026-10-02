@@ -12,10 +12,11 @@ Dépose de bagage automatique dans les aéroports (DBA) -- \ifprof Corrigé \els
 \setcounter{question}{0}
 \marginnote{Concours Centrale Supelec TSI 2013.}
 \marginnote{
-\UPSTIcompetence[2]{B2-14}
-\UPSTIcompetence[2]{C1-05}
-\UPSTIcompetence[2]{C2-07}
+\xpComp{STAT}{01}
+\xpComp{STAT}{03}
+\xpComp{STAT}{04}
 }
+
 
 \begin{marginfigure}
 \includegraphics[width=\linewidth]{fig_00}
@@ -82,6 +83,18 @@ $\pi = \dfrac{1}{2}t_1 \omega_{\text{max}} +\dfrac{1}{2}\left( t_3 - t_2\right) 
 \fi
 
 
+
+\begin{marginfigure}
+\centering
+\includegraphics[width=.7\linewidth]{fig_03}
+%\textit{}
+\end{marginfigure}
+
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{fig_04}
+%\textit{}
+\end{marginfigure}
+
 \question{En déduire la vitesse de rotation de l’arbre moteur maximale $\omega_{\text{mot max}}$. Faire l’application numérique et donner le résultat en $\text{tr}\cdot\text{min}^{-1}$.}
 
 \ifprof
@@ -92,6 +105,14 @@ $\omega_{\text{mot max}}=107,7\times 1,26 = \SI{135}{rad.s^{-1}}=\SI{1292}{tr.mi
 \fi
 
 \subsection*{Recherche du couple moteur maximal en vue du dimensionnement de la machine asynchrone}
+
+
+
+\marginnote{\begin{itemize}
+\item La liaison entre $S_1$ et $S_2$ est une liaison pivot d’axe $\axe{B}{z_0}$.
+\item La liaison entre $S_2$ et $S_3$ est une liaison pivot d’axe $\axe{D}{z_0}$.
+\item La liaison entre $S_0$ et $S_3$ est une liaison pivot d’axe $\axe{Es}{z_0}$.
+\end{itemize}}
 
 \begin{obj}
 La seconde étape du dimensionnement consiste à rechercher le couple moteur maximal en accord avec
@@ -110,6 +131,8 @@ Pour calculer le couple moteur maximal, on se place dans un cas quasi-statique e
 dynamiques. Compte tenu de la construction du mécanisme (non linéaire), le couple moteur est variable et on
 le calcule dans une position particulière correspondant au couple maximal.
 
+
+
 On note :
 \begin{itemize}
 \item $S_0$ le bâti ;
@@ -122,32 +145,20 @@ Le mouvement est considéré comme plan. On néglige toutes les masses sauf cell
 Les liaisons entre $S_0$ et $S_1$ sont des liaisons sphère-plan de normales $\axe{A_1}{{x}_{11}}$ et $\axe{A_2}{{x}_{12}}$.
 On note $I$ le point d’intersection des normales $\axe{A_1}{{x}_{11}}$ et $\axe{A_2}{{x}_{12}}$. On note $\vect{IB}=L_2\vect{x_{12}}$ et $\vect{IG}=x_G\vect{x_{0}}+y_G\vect{y_{0}}$.
 
-\begin{marginfigure}
-\centering
-\includegraphics[width=.8\linewidth]{fig_03}
-%\textit{}
-\end{marginfigure}
+
+
+
 
 On note les angles $\alpha_i$ formés entre les vecteurs $\vect{x}_0$ et $\vect{x}_i$: $\alpha_i=\angl{{x}_0}{{x}_i}$ avec $i\in \{2;3;11;12\}$ .
 
 
-
-La liaison entre $S_1$ et $S_2$ est une liaison pivot d’axe $\axe{B}{z_0}$.
-
-La liaison entre $S_2$ et $S_3$ est une liaison pivot d’axe $\axe{D}{z_0}$.
-
-La liaison entre $S_0$ et $S_3$ est une liaison pivot d’axe $\axe{Es}{z_0}$.
+\fi
 
 \ifnormal
 \else
 On note $F_B$ la norme de la résultante du torseur $\torseurstat{T}{S_2}{S_1}$. 
 \fi
 
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{fig_04}
-%\textit{}
-\end{marginfigure}
-\fi
 
 
 \ifnormal
@@ -253,20 +264,11 @@ On a $C_{\text{red}}=RF_B \sin \left( \alpha_3 - \alpha_2\right) =\dfrac{ Rmgx_G
 \else
 \fi
 
-\question{En déduire la valeur numérique $C_m$ du couple qu’exerce l’arbre de la machine asynchrone sur l’arbre
-d’entrée du réducteur (on supposera le rendement du réducteur égal à 1).}
-\ifprof
-\begin{corrige}
-Le couple moteur est alors de \SI{2,34}{Nm}.
-\end{corrige}
-\else
-\fi
-
 \ifprof
 \else
-\begin{marginfigure}
+\begin{marginfigure}[-7.5cm]
 \centering
-\includegraphics[width=3cm]{Cy_11_Ch_03_PFS_2D_TD_02_DBA_qr}
+\includegraphics[width=2cm]{Cy_11_Ch_03_PFS_2D_TD_02_DBA_qr}
 \end{marginfigure}
 \fi
 
@@ -275,7 +277,7 @@ Le couple moteur est alors de \SI{2,34}{Nm}.
 \else
 \ifcolle
 \else
-\begin{marginfigure}
+\begin{marginfigure}[-5cm]
 \begin{solution}
 \begin{enumerate}
 \item \SI{1,26}{rad.s^{-1}}.
@@ -292,4 +294,16 @@ Le couple moteur est alors de \SI{2,34}{Nm}.
 \end{marginfigure}
 \fi
 \fi
+
+\question{En déduire la valeur numérique $C_m$ du couple qu’exerce l’arbre de la machine asynchrone sur l’arbre
+d’entrée du réducteur (on supposera le rendement du réducteur égal à 1).}
+\ifprof
+\begin{corrige}
+Le couple moteur est alors de \SI{2,34}{Nm}.
+\end{corrige}
+\else
+\fi
+
+
+
 
