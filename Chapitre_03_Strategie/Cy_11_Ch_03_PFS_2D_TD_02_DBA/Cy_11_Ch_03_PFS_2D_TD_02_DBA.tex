@@ -218,7 +218,7 @@ On réalise le BAME :
 \begin{itemize}
 \item $\torseurstat{T}{S_2}{S_1}=\torseurl{ F_B\vect{x_{2}}}{\vect{0}}{B}$ 
 
-$=\torseurl{ F_B\vect{x_{2}}}{L_2 F_B \sin  \left(\alpha_{12}-\alpha_2\right) \vect{z}}{I}$ ($\vect{IB}\wedge F_B\vect{x_{2}}=L_2\vect{x_{12}}\wedge  F_B\vect{x_{2}}$ $=L_2 F_B \sin  \left(\alpha_{12}-\alpha_2\right) \vect{z}$);
+$=\torseurl{ F_B\vect{x_{2}}}{L_2 F_B \sin  \left(\alpha_{12}-\alpha_2\right) \vect{z}}{I}$ ($\vect{IB}\wedge F_B\vect{x_{2}}=-L_2\vect{x_{12}}\wedge  F_B\vect{x_{2}}$ $=L_2 F_B \sin  \left(\alpha_{12}-\alpha_2\right) \vect{z}$);
 \item $\torseurstat{T}{S_0}{S_1}=\torseurl{F_1\vect{x_{11}}+F_2\vect{x_{12}}}{\vect{0}}{I}$;
 \item $\torseurstat{T}{ \text{pes} }{S_1}$ $=\torseurl{-mg \vect{y_{0}}}{\vect{0}}{G}$
 
@@ -226,8 +226,8 @@ $=\torseurl{-mg \vect{y_{0}}}{-mgx_G\vect{z_{0}}}{I}$ ($\vect{IG}\wedge -mg \vec
 \end{itemize}
 
 En appliquant le TMS en $I$ en projection sur $\vect{z_0}$, on a : 
-$L_2 F_B \sin  \left(\alpha_{12}-\alpha_2\right)  -mgx_G = 0 $ soit
-$ F_B    = \dfrac{mgx_G}{L_2  \sin  \left(\alpha_{12}-\alpha_2\right)} $. 
+$-L_2 F_B \sin  \left(\alpha_{12}-\alpha_2\right)  -mgx_G = 0 $ soit
+$ F_B    = -\dfrac{mgx_G}{L_2  \sin  \left(\alpha_{12}-\alpha_2\right)} $. 
 \end{corrige}
 \else
 \fi
@@ -259,7 +259,7 @@ Dans la configuration choisie, on a $x_G=\SI{506}{mm}$, $L_2 = \SI{140}{mm}$, $\
 
 \ifprof
 \begin{corrige}
-On a $C_{\text{red}}=RF_B \sin \left( \alpha_3 - \alpha_2\right) =\dfrac{ Rmgx_G \sin \left( \alpha_3 - \alpha_2\right)}{L_2  \sin  \left(\alpha_{12}-\alpha_2\right)} \simeq \SI{252}{Nm}$.
+On a $C_{\text{red}}=RF_B \sin \left( \alpha_3 - \alpha_2\right) =-\dfrac{ Rmgx_G \sin \left( \alpha_3 - \alpha_2\right)}{L_2  \sin  \left(\alpha_{12}-\alpha_2\right)} \simeq -\SI{252}{Nm}$.
 \end{corrige}
 \else
 \fi
@@ -285,9 +285,9 @@ On a $C_{\text{red}}=RF_B \sin \left( \alpha_3 - \alpha_2\right) =\dfrac{ Rmgx_G
 \item Oui.
 \item $I$.
 \item  $\torseurl{ F_B\vect{x_{2}}}{\vect{0}}{B}$.
-\item $ F_B    = \dfrac{mgx_G}{L_2  \sin  \left(\alpha_{12}-\alpha_2\right)} $.
+\item $ F_B    = -\dfrac{mgx_G}{L_2  \sin  \left(\alpha_{12}-\alpha_2\right)} $.
 \item $C_{\text{red}}-RF_B \sin \left( \alpha_3 - \alpha_2\right) = 0$.
-\item \SI{252}{Nm}.
+\item \SI{-252}{Nm}.
 \item \SI{2,34}{Nm}.
 \end{enumerate}
 \end{solution}
@@ -295,7 +295,7 @@ On a $C_{\text{red}}=RF_B \sin \left( \alpha_3 - \alpha_2\right) =\dfrac{ Rmgx_G
 \fi
 \fi
 
-\question{En déduire la valeur numérique $C_m$ du couple qu’exerce l’arbre de la machine asynchrone sur l’arbre
+\question{En déduire la valeur numérique $C_m$ du couple (en valeur absolue) qu’exerce l’arbre de la machine asynchrone sur l’arbre
 d’entrée du réducteur (on supposera le rendement du réducteur égal à 1).}
 \ifprof
 \begin{corrige}

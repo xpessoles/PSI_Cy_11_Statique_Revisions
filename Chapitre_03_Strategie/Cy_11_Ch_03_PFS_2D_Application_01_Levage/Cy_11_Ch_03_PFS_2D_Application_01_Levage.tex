@@ -51,6 +51,51 @@ $\left(\vect{x_0},\vect{x_2} \right)=\theta_{\left(2/0\right)}$.
 \subsection*{On suppose dans un premier temps que toutes les liaisons sont sans frottement.}
 \question{Tracer le graphe des liaisons et justifier que le système est statiquement plan.}
 \question{En écrivant les équations associées à l’équilibre de chacune des pièces, établir la relation liant $F_m$ et $P_3$ à l’équilibre.   \textit{On cherchera à écrire le minimum d'équations.}}
+
+\ifprof
+\begin{corrige}
+\subparagraph*{Isolement de 1}
+
+\begin{itemize}
+\item On isole la pièce 1.
+\item BAME : $\torseurstat{T}{F_m}{1}$, $\torseurstat{T}{0}{1}$, $\torseurstat{T}{2}{1}$.
+\item TMS en A projeté sur $\vz{}$.
+\end{itemize}
+$\vectm{A}{F_m}{1}\cdot \vz{}+\vectm{A}{0}{1}\cdot \vz{}+\vectm{A}{2}{1}\cdot \vz{} = 0$
+$\Rightarrow -F_mL_1+0+\vect{AH}\wedge  F_H \vy{2}\cdot \vz{} = 0$
+$\Rightarrow -F_mL_1+0+\left(\left(e_1\vx{1} -R_1\vy{2}\right)\wedge  F_H \vy{2} \right)\cdot \vz{} = 0$
+$\Rightarrow -F_mL_1+0+\left(e_1\vx{1}\wedge  F_H \vy{2} \right)\cdot \vz{} = 0$
+
+\fbox{$\Rightarrow -F_mL_1+e_1F_H \cos\theta_2 = 0$}
+
+
+\subparagraph*{Isolement de 2}
+\begin{itemize}
+\item On isole la pièce 2.
+\item BAME : $\torseurstat{T}{1}{2}$, $\torseurstat{T}{0}{2}$, $\torseurstat{T}{3}{2}$.
+\item TMS en B projeté sur $\vz{}$.
+\end{itemize}
+$\vectm{B}{1}{2}\cdot \vz{}+\vectm{B}{0}{2}\cdot \vz{}+\vectm{B}{3}{2}\cdot \vz{} = 0$
+
+$\Rightarrow \left(\vect{BH}\wedge -F_H \vect{y_2} \right)\cdot\vz{}+\left(\vect{BJ}\wedge F_J \vect{y_2} \right)\cdot\vz{} = 0$
+
+$\Rightarrow \left(\left( -L_0\vx{0} +e_1 \vx{1} -R_1 \vy{2}\right)\wedge -F_H \vect{y_2} \right)\cdot\vz{}+\left(\lambda_{32} \vx{2} \wedge F_J \vect{y_2} \right)\cdot\vz{} = 0$
+
+
+\fbox{$\Rightarrow   F_H\left(L_0\cos\theta_2 -e_1 \cos\left(\theta_2-\theta_1\right)\right) +\lambda_{32}  F_J  = 0$}
+
+\subparagraph*{Isolement de 4}
+\begin{itemize}
+\item On isole la pièce 3.
+\item BAME : $\torseurstat{T}{2}{4}$, $\torseurstat{T}{pes}{3}$, $\torseurstat{T}{0}{3}$.
+\item TRS projeté sur $\vy{0}$.
+\end{itemize}
+
+\fbox{$-Mg -F_J \cos\theta_2 =0 $}
+
+\end{corrige}
+\else
+\fi
 %\question{Indiquer quelles sont les équations qui auraient pu permettre de trouver cette relation sans écrire tout le système d’équation.}
 \question{Pour quelle(s) valeur(s) particulières de $\theta_{1/0}$ l’équilibre est-il possible avec un effort $F_m$ nul ?}
 \question{Établir les équations permettant de relier la translation $\lambda_{3/0}$ du coulisseau, la position angulaire $\theta_{(1/0)}$ et les constantes géométriques du mécanisme.}
